@@ -254,17 +254,9 @@ const PortfolioView = () => {
           {/* Profile Image - Static local image only */}
           <div className="avatar">
             <img
-              src="/profile.png"
+              src="/profile_joshua.jpg"
               alt={portfolioData.name}
               crossOrigin="anonymous"
-              onError={(e) => {
-                const img = e.currentTarget;
-                const fallbacks = ['/profile.webp', '/profile.jpg', '/profile.jpeg'];
-                const currentSrc = img.src.split('/').pop() ?? '';
-                const nextIndex = fallbacks.findIndex(f => currentSrc.endsWith(f.replace('/', '')));
-                const next = nextIndex === -1 ? fallbacks[0] : fallbacks[nextIndex + 1];
-                if (next) img.src = next;
-              }}
               style={{
                 border: "none",
                 opacity: 1
